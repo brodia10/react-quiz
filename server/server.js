@@ -8,6 +8,8 @@ app.get("/", function (req, res) {
   res.send(path.join(__dirname, "build", "index.html"));
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 
-console.log("Server is started, listening on port 3000");
+console.log(
+  "Server is started! Listening on 3000 if running locally or a random port that Heroku assigned if running on Heroku"
+);
